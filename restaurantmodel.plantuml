@@ -1,0 +1,49 @@
+@startuml
+
+class Restaurant {
+    name: STRING
+    imageURL: STRING
+    city: STRING
+}
+
+class Table {
+    number: NUMERIC
+    menus: array<FoodMenu>
+    menus: array<DrinkMenu>
+    addFoodMenu ()
+    addDrinkMenu ()
+}
+
+class FoodMenu {
+    title: STRING
+    iconURL: STRING
+    items: array<FoodItem>
+    addItems ()
+}
+
+class DrinkMenu {
+    title: STRING
+    iconURL: STRING
+    items: array<DrinkItem>
+    addItems ()
+}
+
+class FoodItem {
+    item: STRING
+    price: FLOAT
+}
+
+class DrinkItem {
+    item: STRING
+    price: FLOAT
+}
+
+Restaurant--{Table : has many >
+Restaurant--{FoodMenu : has many >
+Restaurant--{DrinkMenu : has many >
+Table-->FoodMenu : has one >
+Table-->DrinkMenu : has one >
+FoodMenu--{FoodItem : has many >
+DrinkMenu--{DrinkItem : has many >
+
+@enduml
