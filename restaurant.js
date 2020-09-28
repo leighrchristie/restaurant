@@ -20,7 +20,39 @@ class Table {
     }
 }
 
+class FoodMenu {
+
+    constructor({titleFood}) {
+        this.titleFood = titleFood
+    }
+}
+
+class FoodItem {
+
+    constructor({foodItem}) {
+        this.foodItem = foodItem
+    }
+}
+
+class DrinkMenu {
+
+    constructor({titleDrink}) {
+        this.titleDrink = titleDrink
+    }
+}
+
+class DrinkItem {
+
+    constructor({drinkItem}) {
+        this.drinkItem = drinkItem
+    }
+}
+
 module.exports = {
     Restaurant:Restaurant,
-    Table:Table
+    Table:Table,
+    FoodMenu:FoodMenu,
+    FoodItem:FoodItem,
+    DrinkMenu:DrinkMenu,
+    DrinkItem:DrinkItem
 }
